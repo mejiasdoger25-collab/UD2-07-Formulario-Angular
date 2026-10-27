@@ -1,0 +1,101 @@
+<!-- Template driven: two way data binding (banana in a box [()]) -->
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header text-center">
+                    <h5 class="mb-0">Formulario de registro</h5>
+                </div>
+
+                <div class="card-body form-field">
+
+                    <div class="mb-3">
+                        <label for="fieldNombre" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="fieldNombre" placeholder="Indique su nombre..." [(ngModel)]="nombre">
+                        <div class="form-text">
+                            El nombre es: {{nombre}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldApellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="fieldApellidos" placeholder="Sus apellidos..." [(ngModel)]="apellidos">
+                        <div class="form-text">
+                            Los apellidos son: {{apellidos}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldNif" class="form-label">NIF</label>
+                        <input type="text" class="form-control" id="fieldNif" placeholder="12312312X" [(ngModel)]="nif">
+                        <div class="form-text">
+                            El valor del NIF es: {{nif}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="fieldEmail" placeholder="sample@sample.com" [(ngModel)]="email">
+                        <div class="form-text">
+                            El email es: {{email}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldTelefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="fieldTelefono" placeholder="600123456" [(ngModel)]="telefono">
+                        <div class="form-text">
+                            El teléfono es: {{telefono}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldSexo" class="form-label">Sexo</label>
+                        <input type="text" class="form-control" id="fieldSexo" placeholder="Indique su sexo..." [(ngModel)]="sexo">
+                        <div class="form-text">
+                            El sexo es: {{sexo}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldComoNosConociste" class="form-label">¿Cómo nos conociste?</label>
+                        <select class="form-select" id="fieldComoNosConociste" [(ngModel)]="comoNosConociste">
+                            <option value="" disabled selected>Selecciona una opción...</option>
+                            <option value="redes-sociales">Redes sociales</option>
+                            <option value="recomendacion">Recomendación de un amigo</option>
+                            <option value="buscador">Buscador (Google, etc.)</option>
+                        </select>
+                        <div class="form-text">
+                            Nos conociste por: {{comoNosConociste}}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldContrasena" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="fieldContrasena" placeholder="Su contraseña..." [(ngModel)]="contrasena">
+                        <div class="form-text">
+                            La contraseña tiene {{contrasena.length}} caracteres
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fieldConfirmPassword" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="fieldConfirmPassword" placeholder="Repita su contraseña..." [(ngModel)]="confirmPassword">
+                        <div class="form-text">
+                            Las contraseñas {{contrasena === confirmPassword ? 'coinciden' : 'no coinciden'}}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button type="button" (click)="sendForm()" class="btn btn-primary w-100 theme-primary btn-solid btn-styled">
+                        Enviar formulario
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
